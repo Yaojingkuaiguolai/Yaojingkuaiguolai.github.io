@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="
+https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js
+"></script>
+
+  <style>
+    .box {
+      width: 100%;
+      height: 700px
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+
+</div>
+</body>
+<script>
+  //获取容器
+  let m1 = document.querySelector('.box')
+  //创建echarts实例
+  let mychart1 = echarts.init(m1)
+  //指定图标的配置项与数据
+  mychart1.setOption({
+    //标题
+    title: {
+      //  主标题
+      text: '离散图',
+      subtext: '子标题',
+      //  居中显示
+      left: 'center',
+      textStyle: {color: 'pink'},
+    },
+    //x轴
+    xAxis: {
+      //数据
+      type: 'category',
+    },
+    //y 轴
+    yAxis: {
+      // 是否显示坐标轴轴线
+      axisLine: {show: true},
+      //是否显示坐标轴刻度
+      axisTick: {show: true},
+    },
+    //  系列的设置 绘制图标类型和数据展示 (可存放 多种类型的图)
+    series: [
+      //离散图
+      {
+        type: 'scatter',
+        color: 'green',
+        data: [
+          [10, 25],
+          [50, 62],
+          [67, 12],
+          [16, 64],
+        ]
+      },
+    ]
+  })
+
+</script>
+</html>
